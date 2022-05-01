@@ -156,13 +156,13 @@ type ProjectParams struct {
 
 // Project reflects getAllProjects method
 type Project struct {
-	ID                  int    `json:"id,string"`
+	ID                  int    `json:"id"`
 	Name                string `json:"name"`
-	IsActive            int    `json:"is_active,string"`
+	IsActive            bool   `json:"is_active"`
 	Token               string `json:"token"`
-	LastModified        int    `json:"last_modified,string"`
-	IsPublic            int    `json:"is_public,string"`
-	IsPrivate           int    `json:"is_private,string"`
+	LastModified        int    `json:"last_modified"`
+	IsPublic            bool   `json:"is_public"`
+	IsPrivate           bool   `json:"is_private"`
 	DefaultSwimlane     string `json:"default_swimlane"`
 	ShowDefaultSwimlane int    `json:"show_default_swimlane,string"`
 	Description         string `json:"description"`
