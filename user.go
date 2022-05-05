@@ -138,28 +138,29 @@ type UserParams struct {
 
 // User type
 type User struct {
-	ID                   int    `json:"id"`
-	UserName             string `json:"username"`
-	Role                 string `json:"role"`
-	IsLdapUser           bool   `json:"is_ldap_user"`
-	Name                 string `json:"name"`
+	APIAccesstoken       string `json:"api_access_token"`
+	AvatarPath           string `json:"avatar_path"`
+	DisableLoginForm     bool   `json:"disable_login_form"`
 	Email                string `json:"email,omitempty"`
-	GoogleID             string `json:"google_id,omitempty"`
 	GithubID             string `json:"github_id,omitempty"`
 	GitlabID             string `json:"gitlab_id,omitempty"`
-	NotificationsEnabled int    `json:"notifications_enabled,string"`
-	Timezone             string `json:"timezone,omitempty"`
+	GoogleID             string `json:"google_id,omitempty"`
+	ID                   int    `json:"id"`
+	IsActive             bool   `json:"is_active"`
+	IsLdapUser           bool   `json:"is_ldap_user"`
 	Language             string `json:"language,omitempty"`
-	DisableLoginForm     int    `json:"disable_login_form,string"`
-	TwoFactorActivated   bool   `json:"twofactor_activated"`
-	TwoFactorSecret      bool   `json:"twofactor_secret"`
+	LockExpirationDate   int    `json:"lock_expiration_date"`
+	Name                 string `json:"name"`
+	NbFailedLogin        int    `json:"nb_failed_login"`
+	NotificationsEnabled bool   `json:"notifications_enabled"`
+	NotificationsFilter  int    `json:"notifications_filter"`
+	Password             string `json:"password"`
+	Role                 string `json:"role"`
+	Timezone             string `json:"timezone,omitempty"`
 	Token                string `json:"token"`
-	NotificationsFilter  int    `json:"notifications_filter,string"`
-	NbFailedLogin        int    `json:"nb_failed_login,string"`
-	LockExpirationDate   int    `json:"lock_expiration_date,string"`
-	IsActive             bool   `json:"int,string"`
-	AvatarPath           string `json:"avatar_path"`
-	APIAccesstoken       string `json:"api_access_token"`
+	TwoFactorActivated   bool   `json:"twofactor_activated"`
+	TwoFactorSecret      string `json:"twofactor_secret"`
+	UserName             string `json:"username"`
 }
 
 func (r *request) decodeUser() (User, error) {
